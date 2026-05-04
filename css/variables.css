@@ -1,0 +1,128 @@
+:root {
+   /* Основные фоны */
+   --color-bg: #0B0D17;
+   --color-bg2: #1C1E26;
+   --color-bg3: #14161f;
+
+   /* Акцентные цвета */
+   --color-accent: #1D1D92;
+   --color-accent-hover: #2525b8;
+   --color-accent-glow: rgba(29, 29, 146, 0.55);
+
+   /* Навигация */
+   --color-nav-line: rgba(29, 29, 146, 0.35);
+   --color-nav-link-hover: #4FC3F7;
+   --color-nav-underline: #4FC3F7;
+
+   /* Текст */
+   --color-text: #FFFFFF;
+   --color-text-muted: #B0BEC5;
+   --color-text-dark: #111111;
+
+   /* Границы карточек */
+   --color-card-border: rgba(29, 29, 146, 0.20);
+   --color-card-border-hover: rgba(79, 195, 247, 0.40);
+
+   /* Дополнительные цвета */
+   --color-blue: #4FC3F7;
+   --color-green: #00E676;
+   --color-overlay: rgba(11, 13, 23, 0.88);
+   --color-overlay-dark: rgba(11, 13, 23, 0.97);
+
+   /* Цвета для форм */
+   --color-input-bg: #8A909C;
+   --color-input-hover: #1A1A8A;
+   --color-input-focus: #A1A7B3;
+
+   /* Цвета для карточек контактов */
+   --color-contact-card: #21232C;
+   --color-contact-text-muted: #D0D0D0;
+   --color-contact-text-light: #A0A0A0;
+
+   /* Семейства шрифтов */
+   --font-heading: 'Orbitron', sans-serif;
+   --font-body: 'Roboto', sans-serif;
+
+   /* Размеры шрифтов */
+   --fs-h1-min: 48px;
+   --fs-h1-max: 60px;
+   --fs-h2-min: 32px;
+   --fs-h2-max: 40px;
+   --fs-h3: 20px;
+   --fs-nav: 18px;
+   --fs-body: 16px;
+   --fs-body-lg: 19px;
+   --fs-small: 14px;
+   --fs-xs: 13px;
+   --fs-tiny: 12px;
+
+   /* Динамические размеры */
+   --size-h1: clamp(48px, 6.5vw, 60px);
+   --size-h2: clamp(32px, 4vw, 40px);
+   --size-body-lg: clamp(16px, 1.7vw, 19px);
+
+   /* Толщина шрифтов */
+   --fw-regular: 400;
+   --fw-semibold: 600;
+   --fw-bold: 700;
+   --fw-black: 900;
+
+   /* Высота навигации */
+   --nav-height: 80px;
+
+   /* Максимальная ширина контента */
+   --content-max: 1140px;
+   --content-medium: 1100px;
+   --content-small: 680px;
+
+   /* Отступы секций */
+   --section-pad-v: 80px;
+   --section-pad-h: 40px;
+
+   /* Внутренние отступы */
+   --padding-card: 30px;
+   --padding-card-lg: 40px;
+   --padding-modal: 40px;
+
+   /* Расстояния между элементами */
+   --gap-xs: 8px;
+   --gap-sm: 16px;
+   --gap-md: 28px;
+   --gap-lg: 40px;
+   --gap-xl: 60px;
+
+   /* Скругления */
+   --radius-sm: 6px;
+   --radius-md: 12px;
+   --radius-lg: 20px;
+   --radius-xl: 24px;
+
+   /* Тени карточек */
+   --shadow-card: 0 8px 32px rgba(0, 0, 0, 0.4);
+   --shadow-card-hover: 0 16px 48px rgba(29, 29, 146, 0.25);
+   --shadow-modal: 0 20px 60px rgba(0, 0, 0, 0.6);
+
+   /* Свечение кнопок */
+   --glow-btn: 0 0 24px var(--color-accent-glow);
+   --glow-btn-hover: 0 0 44px var(--color-accent-glow);
+   --glow-blue: 0 0 15px rgba(79, 195, 247, 0.5);
+
+   /* Размытие */
+   --blur-nav: 14px;
+   --blur-modal: 8px;
+   --blur-mobile-menu: 16px;
+
+   /* Переходы */
+   --transition-fast: 0.18s ease;
+   --transition-base: 0.28s ease;
+   --transition-slow: 0.45s ease;
+   --transition-transform: 0.2s ease;
+
+   /* Слои наложения */
+   --z-overlay: 2;
+   --z-content: 3;
+   --z-nav: 10;
+   --z-mobile: 10;
+   --z-modal: 11;
+   --z-modal-content: 12;
+}

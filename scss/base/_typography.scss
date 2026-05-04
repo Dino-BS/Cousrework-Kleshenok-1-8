@@ -1,0 +1,31 @@
+.title-link {
+  text-decoration: none;
+  display: inline-block;
+  width: 100%;
+
+  &:hover .section-title {
+    color: var(--color-nav-link-hover);
+  }
+}
+
+.section-title {
+  font-family: var(--font-heading);
+  font-size: clamp(var(--fs-h2-min), 4vw, var(--fs-h2-max));
+  font-weight: var(--fw-bold);
+  margin-bottom: var(--gap-lg);
+  color: var(--color-text);
+  text-align: center;
+  transition: color var(--transition-fast);
+
+  &::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--color-accent);
+    margin-top: 10px;
+    border-radius: 2px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

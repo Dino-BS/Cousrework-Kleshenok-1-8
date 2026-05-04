@@ -1,0 +1,40 @@
+.filters-section {
+  display: flex;
+  justify-content: center;
+  padding: 20px var(--section-pad-h) 40px;
+
+  .filters-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    background: rgba(11, 13, 23, 0.6);
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--color-card-border);
+  }
+
+  .filter-btn {
+    background: transparent;
+    border: 1px solid transparent;
+    color: var(--color-text-muted);
+    padding: 8px 24px;
+    border-radius: 30px;
+    font-size: 1rem;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: var(--transition-base);
+
+    &:hover {
+      color: var(--color-text);
+      background: rgba(255, 255, 255, 0);
+    }
+
+    &.active {
+      background: var(--color-accent);
+      color: var(--color-text);
+      border-color: var(--color-accent-hover);
+      box-shadow: 0 0 15px var(--color-accent-glow);
+    }
+  }
+}
