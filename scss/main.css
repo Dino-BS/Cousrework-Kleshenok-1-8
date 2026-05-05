@@ -299,6 +299,10 @@ nav .burger span {
     grid-template-columns: 1fr;
   }
 }
+header {
+  display: contents;
+}
+
 .btn-primary {
   display: inline-block;
   background: var(--color-accent);
@@ -1040,6 +1044,16 @@ nav .burger span {
   align-items: flex-start;
   min-height: 100vh;
 }
+@media (max-width: 768px) {
+  .contact-page-new {
+    padding: 100px 15px 60px;
+  }
+}
+@media (max-width: 480px) {
+  .contact-page-new {
+    padding: 90px 10px 50px;
+  }
+}
 
 .contact-container {
   display: grid;
@@ -1063,17 +1077,52 @@ nav .burger span {
   display: flex;
   flex-direction: column;
 }
+@media (max-width: 768px) {
+  .contact-card {
+    padding: 30px;
+    border-radius: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+}
 .contact-card h2 {
   font-family: var(--font-body);
   font-size: 32px;
   font-weight: 700;
   margin-bottom: 25px;
 }
+@media (max-width: 768px) {
+  .contact-card h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .contact-card h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+}
 .contact-card h3 {
   font-family: var(--font-body);
   font-size: 20px;
   font-weight: 600;
   margin: 20px 0 15px;
+}
+@media (max-width: 768px) {
+  .contact-card h3 {
+    font-size: 18px;
+  }
+}
+@media (max-width: 480px) {
+  .contact-card h3 {
+    font-size: 16px;
+    margin: 15px 0 10px;
+  }
 }
 
 .contact-list {
@@ -1086,6 +1135,19 @@ nav .burger span {
   margin-bottom: 15px;
   font-family: var(--font-body);
 }
+@media (max-width: 768px) {
+  .contact-list li {
+    font-size: 15px;
+    margin-bottom: 12px;
+  }
+}
+@media (max-width: 480px) {
+  .contact-list li {
+    font-size: 14px;
+    margin-bottom: 10px;
+    word-break: break-word;
+  }
+}
 .contact-list strong {
   font-weight: 700;
 }
@@ -1093,6 +1155,11 @@ nav .burger span {
 .social-icons-new {
   display: flex;
   gap: 15px;
+}
+@media (max-width: 480px) {
+  .social-icons-new {
+    gap: 12px;
+  }
 }
 .social-icons-new a {
   display: inline-block;
@@ -1109,6 +1176,13 @@ nav .burger span {
      object-fit: cover;
   padding: 8px;
 }
+@media (max-width: 480px) {
+  .social-icons-new img {
+    width: 40px;
+    height: 40px;
+    padding: 6px;
+  }
+}
 
 .media-container {
   width: 100%;
@@ -1123,9 +1197,29 @@ nav .burger span {
      object-fit: cover;
   display: block;
 }
+@media (max-width: 768px) {
+  .media-container .office-img {
+    height: 160px;
+  }
+}
+@media (max-width: 480px) {
+  .media-container .office-img {
+    height: 140px;
+  }
+}
 .media-container iframe {
   width: 100%;
   display: block;
+}
+@media (max-width: 768px) {
+  .media-container iframe {
+    height: 250px;
+  }
+}
+@media (max-width: 480px) {
+  .media-container iframe {
+    height: 200px;
+  }
 }
 
 .contact-form-new {
@@ -1139,10 +1233,30 @@ nav .burger span {
   align-items: center;
   margin-bottom: 15px;
 }
+@media (max-width: 600px) {
+  .inline-input {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+}
 .inline-input label {
   width: 110px;
   font-size: 16px;
   font-weight: 600;
+}
+@media (max-width: 768px) {
+  .inline-input label {
+    width: 100px;
+    font-size: 15px;
+  }
+}
+@media (max-width: 600px) {
+  .inline-input label {
+    width: 100%;
+    margin-bottom: 8px;
+    font-size: 14px;
+  }
 }
 .inline-input input {
   flex: 1;
@@ -1154,6 +1268,18 @@ nav .burger span {
   font-size: 16px;
   outline: none;
   transition: background 0.3s;
+}
+@media (max-width: 768px) {
+  .inline-input input {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+}
+@media (max-width: 600px) {
+  .inline-input input {
+    width: 100%;
+    font-size: 14px;
+  }
 }
 .inline-input input:hover {
   background: #1A1A8A;
@@ -1174,6 +1300,19 @@ nav .burger span {
   resize: none;
   transition: background 0.3s;
 }
+@media (max-width: 768px) {
+  .form-section textarea {
+    font-size: 15px;
+    padding: 12px;
+    border-radius: 10px;
+  }
+}
+@media (max-width: 480px) {
+  .form-section textarea {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
 .form-section textarea:hover {
   background: #1A1A8A;
 }
@@ -1186,6 +1325,13 @@ nav .burger span {
   gap: 20px;
   margin-top: 30px;
 }
+@media (max-width: 600px) {
+  .form-actions {
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+  }
+}
 .form-actions .btn-action {
   flex: 1;
   background: #1A1A8A;
@@ -1197,6 +1343,19 @@ nav .burger span {
   font-weight: 700;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
+}
+@media (max-width: 768px) {
+  .form-actions .btn-action {
+    font-size: 16px;
+    padding: 14px;
+  }
+}
+@media (max-width: 600px) {
+  .form-actions .btn-action {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px;
+  }
 }
 .form-actions .btn-action:hover {
   background: #2525B8;
