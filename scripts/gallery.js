@@ -1,3 +1,20 @@
+const galleryTriggers = document.querySelectorAll('.card-btn, .g-card-image');
+
+galleryTriggers.forEach(trigger => {
+  trigger.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    // Получаем ID 
+    const modalId = trigger.getAttribute('href') || trigger.closest('.g-card').querySelector('a').getAttribute('href');
+    const targetModal = document.querySelector(modalId);
+
+    if (targetModal) {
+      targetModal.classList.add('active');
+      document.body.style.overflow = 'hidden'; // Запрещаем скролл фона
+    }
+  });
+});
+
 const closeButtons = document.querySelectorAll('.modal-close');
 const modals = document.querySelectorAll('.modal');
 
