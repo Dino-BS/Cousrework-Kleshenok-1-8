@@ -1,60 +1,28 @@
-document.addEventListener('DOMContentLoaded', () => {
-  
-  // Поиск кнопки и меню по классам
-  const burger = document.querySelector('.burger');
-  const mobileMenu = document.getElementById('mobileMenu');
+// Загрузка XML
+const container = document.getElementById('eventsContainer');
+const filterButtons = document.querySelectorAll('.filter-btn');
 
-  // Добавляем или убираем классы открыт или закрыт
-  function toggleMenu() {
-    mobileMenu.classList.toggle('open');
-    burger.classList.toggle('active');
-  }
+async function loadEvents(filterValue = 'all') {
+  try {
+    const response = await fetch('../pages/poster.xml');
+    const xmlText = await response.text();
+    const xml = new DOMParser().parseFromString(xmlText, "text/xml");
+    const events = xml.querySelectorAll('event');
 
-  // Вешаем событие клика на бургер
-  burger.addEventListener('click', (e) => {
-    // Останавливаем дальнейший клик
-    e.stopPropagation(); 
-    toggleMenu();
-  });
+    container.innerHTML = '';
 
-  // Тык в любое место экрана ,кроме модуля
-  document.addEventListener('click', (e) => {
-    // Проверяем: если меню открыто и мы тыкнули не в него и не в бургер
-    if (mobileMenu.classList.contains('open') && 
-        !mobileMenu.contains(e.target) && 
-        !burger.contains(e.target)) {
-      
-      // Закрываем все,если тык мимо
-      mobileMenu.classList.remove('open');
-      burger.classList.remove('active');
-    }
-  });
+    events.forEach(event => {
+      const category = event.getAttribute('category');
+      const id = event.getAttribute('id');
 
-  // Загрузка XML
-  const container = document.getElementById('eventsContainer');
-  const filterButtons = document.querySelectorAll('.filter-btn');
+      if (filterValue === 'all' || filterValue === category) {
+        const title = event.querySelector('title').textContent;
+        const desc = event.querySelector('description').textContent;
+        const date = event.querySelector('date').textContent;
+        const price = event.querySelector('price').textContent;
+        const img = event.querySelector('image').textContent;
 
-  async function loadEvents(filterValue = 'all') {
-    try {
-      const response = await fetch('../pages/poster.xml');
-      const xmlText = await response.text();
-      const xml = new DOMParser().parseFromString(xmlText, "text/xml");
-      const events = xml.querySelectorAll('event');
-
-      container.innerHTML = '';
-
-      events.forEach(event => {
-        const category = event.getAttribute('category');
-        const id = event.getAttribute('id');
-
-        if (filterValue === 'all' || filterValue === category) {
-          const title = event.querySelector('title').textContent;
-          const desc = event.querySelector('description').textContent;
-          const date = event.querySelector('date').textContent;
-          const price = event.querySelector('price').textContent;
-          const img = event.querySelector('image').textContent;
-
-          const cardHtml = `
+        const cardHtml = `
   <div class="event-card" data-category="${category}">
     <div class="event-image">
       <img src="${img}" alt="${title}">
@@ -70,22 +38,21 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   </div>
 `;
-          container.insertAdjacentHTML('beforeend', cardHtml);
-        }
-      });
-    } catch (err) {
-      console.error("Ошибка:", err);
-    }
-  }
-
-  // Фильтры
-  filterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      filterButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      loadEvents(btn.getAttribute('data-filter'));
+        container.insertAdjacentHTML('beforeend', cardHtml);
+      }
     });
-  });
+  } catch (err) {
+    console.error("Ошибка:", err);
+  }
+}
 
-  loadEvents();
+// Фильтры
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    loadEvents(btn.getAttribute('data-filter'));
+  });
 });
+
+loadEvents();
